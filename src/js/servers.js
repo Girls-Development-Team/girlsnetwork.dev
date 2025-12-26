@@ -13,31 +13,8 @@ function copyInvite(event, linkKey) {
     
     const inviteLink = INVITE_LINKS[linkKey];
     
-    // Copy to clipboard
-    navigator.clipboard.writeText(inviteLink).then(() => {
-        showToast('Invite link copied to clipboard!');
-        
-        // Optional: Open Discord invite in new tab
-        //setTimeout(() => {
-        //    window.open(inviteLink, '_blank');
-        //}, 500);
-    }).catch(err => {
-        console.error('Failed to copy:', err);
-        showToast('Failed to copy link. Please try again.');
-    });
-}
-
-// Show toast notification
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    const messageEl = toast.querySelector('.toast-message');
-    
-    messageEl.textContent = message;
-    toast.classList.add('show');
-    
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
+    // Open in new tab
+    window.open(inviteLink, '_blank', 'noopener noreferrer');
 }
 
 // Enhanced particle effect on mouse move
