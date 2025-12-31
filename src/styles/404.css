@@ -255,6 +255,14 @@ main.servers-container {
   .page-title { font-size: 2.5rem; }
 }
 
+/* Vanta stays behind everything */
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Watermark above Vanta */
 .error-bg {
   position: fixed;
   inset: 0;
@@ -267,7 +275,7 @@ main.servers-container {
   letter-spacing: 0.1em;
 
   color: var(--neon-pink);
-  opacity: 0.1;           /* bump up so you can SEE it */
+  opacity: 0.06;           /* bump up so you can SEE it */
   text-shadow: 0 0 30px var(--neon-pink);
 
   pointer-events: none;
@@ -278,4 +286,3 @@ main.servers-container {
 /* Your content above the watermark */
 main.servers-container { position: relative; z-index: 2; }
 .nav { position: fixed; z-index: 3; }
-
