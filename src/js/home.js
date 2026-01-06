@@ -3,7 +3,7 @@ const createParticle = (x, y) => {
     const particle = document.createElement('div');
     const colors = ['#ff1cf7', '#00f0ff', '#b026ff'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    
+
     particle.style.cssText = `
         position: fixed;
         width: 6px;
@@ -18,7 +18,7 @@ const createParticle = (x, y) => {
         z-index: 5;
     `;
     document.body.appendChild(particle);
-    
+
     setTimeout(() => particle.remove(), 1500);
 };
 
@@ -55,10 +55,10 @@ document.head.appendChild(style);
 window.addEventListener('mousemove', (e) => {
     const cyberFrame = document.querySelector('.cyber-frame');
     if (!cyberFrame) return;
-    
+
     const x = (e.clientX - window.innerWidth / 2) / 50;
     const y = (e.clientY - window.innerHeight / 2) / 50;
-    
+
     cyberFrame.style.transform = `translate(${x}px, ${y}px)`;
 });
 
@@ -105,7 +105,7 @@ document.head.appendChild(fadeInStyle);
 
 // Add hover sound effect to buttons (optional - using visual feedback instead)
 document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
+    btn.addEventListener('mouseenter', function () {
         this.style.transition = 'all 0.2s ease';
     });
 });

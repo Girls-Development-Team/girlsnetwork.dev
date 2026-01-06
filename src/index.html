@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
+
     <!-- Page Title -->
     <title>Girls Network | Home</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="A vibrant community network for all folks - Gaming, Development, and Connection" />
+    <meta name="description"
+        content="A vibrant community network for all folks - Gaming, Development, and Connection" />
     <meta name="keywords" content="Dev, Discord, Girls, Transfemme, Community, Gaming, Minecraft" />
     <meta name="author" content="Girls Network" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://girlsnetwork.dev/" />
-    
+
     <!-- Alternate for mobile -->
     <link rel="alternate" media="only screen and (max-width: 640px)" href="https://girlsnetwork.dev" />
-  
+
     <!-- iOS Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Girls Network" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#ff1cf7" />
 
     <!-- Open Graph / Discord / Facebook -->
     <meta property="og:site_name" content="Girls Network">
     <meta property="og:title" content="Girls Network | Home" />
-    <meta property="og:description" content="A vibrant community network for all folks - Gaming, Development, and Connection" />
+    <meta property="og:description"
+        content="A vibrant community network for all folks - Gaming, Development, and Connection" />
     <meta property="og:image" content="https://girlsnetwork.dev/favicon.png" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://girlsnetwork.dev/" />
     <meta property="og:locale" content="en_GB" />
-  
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Girls Network | Home" />
@@ -66,7 +69,7 @@
       "inLanguage": "en-GB"
     }
     </script>
-    
+
     <!-- Additional Structured Data for Organization -->
     <script type="application/ld+json">
     {
@@ -91,12 +94,20 @@
     <link rel="stylesheet" href="./styles/home.css">
 
 </head>
+
 <body>
     <div class="stars"></div>
     <div class="scanlines"></div>
-    
+
     <nav class="nav">
-        <a href="/"><div class="nav-logo">GIRLS<span class="neon">NETWORK</span></div></a>
+        <a href="/">
+            <div class="nav-logo">GIRLS<span class="neon">NETWORK</span></div>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
             <a href="/" class="nav-link active">Home</a>
             <a href="/servers" class="nav-link">Servers</a>
@@ -111,7 +122,7 @@
                 <span class="glitch" data-text="NETWORK">NETWORK</span>
             </h1>
             <p class="hero-subtitle">A vibrant digital space for our community, gaming, and creativity</p>
-            
+
             <div class="hero-tags">
                 <span class="tag">✨ Gaming</span>
                 <span class="tag">🎮 Minecraft</span>
@@ -163,12 +174,14 @@
             <p>Vibrant discussions and regular events</p>
         </div>
     </section>
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner">
             <span>© Girls Network™</span>
             <a href="mailto:support@girlsnetwork.dev">support@girlsnetwork.dev</a>
         </div>
-        </footer>
+    </footer>
+    <script src="js/nav.js"></script>
     <script src="js/home.js"></script>
 </body>
+
 </html>

@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
+
     <!-- Page Title -->
     <title>Girls Network | Minecraft</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join our Minecraft server - Build, explore, and create together in our welcoming community" />
+    <meta name="description"
+        content="Join our Minecraft server - Build, explore, and create together in our welcoming community" />
     <meta name="keywords" content="Minecraft, Girls Network, Server, Gaming, Community, Building" />
     <meta name="author" content="Girls Network" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://girlsnetwork.dev/mc" />
-    
+
     <!-- Alternate for mobile -->
     <link rel="alternate" media="only screen and (max-width: 640px)" href="https://girlsnetwork.dev/mc" />
-  
+
     <!-- iOS Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Girls Network" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#ff1cf7" />
 
@@ -39,7 +41,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://girlsnetwork.dev/mc" />
     <meta property="og:locale" content="en_GB" />
-  
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Girls Network | Minecraft" />
@@ -65,17 +67,27 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../styles/minecraft.css">
 </head>
+
 <body>
     <div class="stars"></div>
     <div class="scanlines"></div>
-    
+
     <nav class="nav">
-        <a href="/"><div class="nav-logo">GIRLS<span class="neon">NETWORK</span></div></a>
+        <a href="/">
+            <div class="nav-logo">GIRLS<span class="neon">NETWORK</span></div>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
             <a href="/" class="nav-link">Home</a>
             <a href="/servers" class="nav-link">Servers</a>
@@ -107,47 +119,47 @@
                         <span class="address-label">Server IP:</span>
                         <code class="server-ip" id="serverIP">mc.girlsnetwork.dev</code>
                         <div>
-                        <span class="address-label">Bedrock Port:</span>
-                        <code class="server-port" id="serverPort">19132</code>
-                        <button class="copy-btn" onclick="copyServerIP()" title="Copy to clipboard">
-                            <span class="copy-icon">📋</span>
-                        </button>
+                            <span class="address-label">Bedrock Port:</span>
+                            <code class="server-port" id="serverPort">19132</code>
+                            <button class="copy-btn" onclick="copyServerIP()" title="Copy to clipboard">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="status-display" id="statusDisplay">
-                <div class="loading">
-                    <div class="loading-spinner"></div>
-                    <span>Checking server status...</span>
+                <div class="status-display" id="statusDisplay">
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <span>Checking server status...</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="server-details" id="serverDetails" style="display: none;">
-                <div class="detail-row">
-                    <div class="detail-item">
-                        <div class="detail-icon">👥</div>
-                        <div class="detail-content">
-                            <span class="detail-label">Players Online</span>
-                            <span class="detail-value" id="playersOnline">-/-</span>
+                <div class="server-details" id="serverDetails" style="display: none;">
+                    <div class="detail-row">
+                        <div class="detail-item">
+                            <div class="detail-icon">👥</div>
+                            <div class="detail-content">
+                                <span class="detail-label">Players Online</span>
+                                <span class="detail-value" id="playersOnline">-/-</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-icon">🎮</div>
-                        <div class="detail-content">
-                            <span class="detail-label">Version</span>
-                            <span class="detail-value" id="serverVersion">-</span>
+                        <div class="detail-item">
+                            <div class="detail-icon">🎮</div>
+                            <div class="detail-content">
+                                <span class="detail-label">Version</span>
+                                <span class="detail-value" id="serverVersion">-</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-icon">📶</div>
-                        <div class="detail-content">
-                            <span class="detail-label">Latency</span>
-                            <span class="detail-value" id="serverLatency">-</span>
+                        <div class="detail-item">
+                            <div class="detail-icon">📶</div>
+                            <div class="detail-content">
+                                <span class="detail-label">Latency</span>
+                                <span class="detail-value" id="serverLatency">-</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- Server Info Sections -->
@@ -155,7 +167,8 @@
             <div class="info-card">
                 <div class="card-accent minecraft"></div>
                 <h3>❤️ Lifesteal</h3>
-                <p>Experience PvP survival with friends. Gather resources, build your base, and survive together... or against each other.</p>
+                <p>Experience PvP survival with friends. Gather resources, build your base, and survive together... or
+                    against each other.</p>
                 <ul class="feature-list">
                     <li>Full Lifesteal Setup</li>
                     <li>Fair rules to all</li>
@@ -181,7 +194,7 @@
                 <span class="title-text">HOW TO JOIN</span>
                 <span class="title-line"></span>
             </h2>
-            
+
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -201,7 +214,8 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h4>Enter Address</h4>
-                        <p>Paste <code>mc.girlsnetwork.dev</code> as the server address, and <code>19132</code> as the port for bedrock users.</p>
+                        <p>Paste <code>mc.girlsnetwork.dev</code> as the server address, and <code>19132</code> as the
+                            port for bedrock users.</p>
                     </div>
                 </div>
                 <div class="step">
@@ -221,7 +235,7 @@
                 <span class="title-text">SERVER RULES</span>
                 <span class="title-line"></span>
             </h2>
-            
+
             <div class="rules-grid">
                 <div class="rule-card">
                     <div class="rule-icon">💖</div>
@@ -265,12 +279,14 @@
             <span class="toast-message">Server IP copied to clipboard!</span>
         </div>
     </div>
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner">
             <span>© Girls Network™</span>
             <a href="mailto:support@girlsnetwork.dev">support@girlsnetwork.dev</a>
         </div>
-        </footer>
+    </footer>
+    <script src="../js/nav.js"></script>
     <script src="../js/minecraft.js"></script>
 </body>
+
 </html>

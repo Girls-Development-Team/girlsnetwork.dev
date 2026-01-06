@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function checkServerStatus() {
     const statusDisplay = document.getElementById('statusDisplay');
     const serverDetails = document.getElementById('serverDetails');
-    
+
     try {
         // Using mcsrvstat.us API - free Minecraft server status checker
         // Build the URL - if port is 25565, we can omit it as the API will detect it
@@ -23,16 +23,16 @@ async function checkServerStatus() {
         if (SERVER_CONFIG.port !== 25565) {
             apiUrl += `:${SERVER_CONFIG.port}`;
         }
-        
+
         const response = await fetch(apiUrl);
-        
+
         // Check if the response is OK
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        
+
         if (data.online) {
             displayOnlineStatus(data);
         } else {
@@ -48,7 +48,7 @@ async function checkServerStatus() {
 function displayOnlineStatus(data) {
     const statusDisplay = document.getElementById('statusDisplay');
     const serverDetails = document.getElementById('serverDetails');
-    
+
     // Build MOTD if available
     let motdHtml = '';
     if (data.motd && data.motd.clean && data.motd.clean.length > 0) {
@@ -58,7 +58,7 @@ function displayOnlineStatus(data) {
             </div>
         `;
     }
-    
+
     // Update status display
     statusDisplay.className = 'status-display online';
     statusDisplay.innerHTML = `
@@ -68,25 +68,25 @@ function displayOnlineStatus(data) {
         </div>
         ${motdHtml}
     `;
-    
+
     // Show and update server details
     serverDetails.style.display = 'block';
-    
+
     // Update player count
     const playersOnline = document.getElementById('playersOnline');
     playersOnline.textContent = `${data.players.online}/${data.players.max}`;
-    
+
     // Update version
     const serverVersion = document.getElementById('serverVersion');
     // Use protocol.name if available, otherwise fall back to version
     const versionText = (data.protocol && data.protocol.name) ? data.protocol.name : (data.version || 'Unknown');
     serverVersion.textContent = versionText;
-    
+
     // Calculate and display latency (simulated based on response time)
     const serverLatency = document.getElementById('serverLatency');
     const latency = Math.floor(Math.random() * 50) + 20; // Simulated: 20-70ms
     serverLatency.textContent = `${latency}ms`;
-    
+
     // Update border color
     const statusCard = document.querySelector('.server-status-card');
     statusCard.style.borderColor = 'rgba(0, 255, 0, 0.5)';
@@ -96,7 +96,7 @@ function displayOnlineStatus(data) {
 function displayOfflineStatus() {
     const statusDisplay = document.getElementById('statusDisplay');
     const serverDetails = document.getElementById('serverDetails');
-    
+
     // Update status display
     statusDisplay.className = 'status-display offline';
     statusDisplay.innerHTML = `
@@ -108,10 +108,10 @@ function displayOfflineStatus() {
             The server appears to be offline. Please check back later or contact an admin.
         </p>
     `;
-    
+
     // Hide server details
     serverDetails.style.display = 'none';
-    
+
     // Update border color
     const statusCard = document.querySelector('.server-status-card');
     statusCard.style.borderColor = 'rgba(255, 68, 68, 0.5)';
@@ -121,7 +121,7 @@ function displayOfflineStatus() {
 function displayErrorStatus() {
     const statusDisplay = document.getElementById('statusDisplay');
     const serverDetails = document.getElementById('serverDetails');
-    
+
     statusDisplay.className = 'status-display';
     statusDisplay.innerHTML = `
         <div style="color: var(--text-secondary);">
@@ -131,14 +131,14 @@ function displayErrorStatus() {
             </p>
         </div>
     `;
-    
+
     serverDetails.style.display = 'none';
 }
 
 // Copy server IP to clipboard
 function copyServerIP() {
     const serverIP = document.getElementById('serverIP').textContent;
-    
+
     navigator.clipboard.writeText(serverIP).then(() => {
         showToast('Server IP copied to clipboard!');
     }).catch(err => {
@@ -151,10 +151,10 @@ function copyServerIP() {
 function showToast(message) {
     const toast = document.getElementById('toast');
     const messageEl = toast.querySelector('.toast-message');
-    
+
     messageEl.textContent = message;
     toast.classList.add('show');
-    
+
     setTimeout(() => {
         toast.classList.remove('show');
     }, 3000);
@@ -165,7 +165,7 @@ const createParticle = (x, y) => {
     const particle = document.createElement('div');
     const colors = ['#00ff00', '#7cbd2b', '#ff1cf7', '#00f0ff'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    
+
     particle.style.cssText = `
         position: fixed;
         width: 6px;
@@ -180,7 +180,7 @@ const createParticle = (x, y) => {
         z-index: 5;
     `;
     document.body.appendChild(particle);
-    
+
     setTimeout(() => particle.remove(), 1500);
 };
 
@@ -255,11 +255,11 @@ setInterval(() => {
 
 // Add hover effects to info cards
 document.querySelectorAll('.info-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-8px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
     });
 });

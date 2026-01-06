@@ -10,9 +10,9 @@ const INVITE_LINKS = {
 // Copy invite link to clipboard and show toast
 function copyInvite(event, linkKey) {
     event.preventDefault();
-    
+
     const inviteLink = INVITE_LINKS[linkKey];
-    
+
     // Open in new tab
     window.open(inviteLink, '_blank', 'noopener noreferrer');
 }
@@ -22,7 +22,7 @@ const createParticle = (x, y) => {
     const particle = document.createElement('div');
     const colors = ['#ff1cf7', '#00f0ff', '#b026ff'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    
+
     particle.style.cssText = `
         position: fixed;
         width: 6px;
@@ -37,7 +37,7 @@ const createParticle = (x, y) => {
         z-index: 5;
     `;
     document.body.appendChild(particle);
-    
+
     setTimeout(() => particle.remove(), 1500);
 };
 
@@ -99,11 +99,11 @@ document.head.appendChild(fadeInStyle);
 
 // Add hover effects to server cards
 document.querySelectorAll('.server-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-8px)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0)';
     });
 });
